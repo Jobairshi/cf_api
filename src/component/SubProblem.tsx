@@ -7,7 +7,7 @@ interface cfProblemSetStruct {
   tags: string[];
 }
 export default function SubProblem(props: cfProblemSetStruct) {
-  const { contestId, name,index, type, rating, tags } = props;
+  const { contestId, name,index, rating, tags } = props;
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function SubProblem(props: cfProblemSetStruct) {
                 <a  className="hover:bg-blue-400 py-2 rounded-lg"  href={`https://codeforces.com/problemset/problem/${contestId}/${index}`}>{name}</a>
                 </td>
                 <td className="px-6 py-4">
-                    {type}
+                    {index}
                 </td>
                 <td className="px-6 py-4">
                     {rating}

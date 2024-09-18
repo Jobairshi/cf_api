@@ -3,7 +3,6 @@ import axios from "axios";
 import RecentSub from "./RecentSub";
 
 
-// Define the interface for the user structure
 interface userStruct {
   avatar: string;
   city: string;
