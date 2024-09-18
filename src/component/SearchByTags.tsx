@@ -47,9 +47,9 @@ export default function SearchByTags() {
     return <h1 className="text-red-500">Error: {error}</h1>;
   }
 
-  const indexOfLastRow = currentPage * rowsPerPage;
-  const indexOfFirstRow = indexOfLastRow - rowsPerPage;
-  const currentRows = filterData.slice(indexOfFirstRow, indexOfLastRow);
+  const idxofLast = currentPage * rowsPerPage;
+  const indexOfFirstRow = idxofLast - rowsPerPage;
+  const currentRows = filterData.slice(indexOfFirstRow, idxofLast);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -177,7 +177,7 @@ export default function SearchByTags() {
             <button
               className="px-4 py-2 bg-blue-500 text-white rounded"
               onClick={handleNextPage}
-              disabled={indexOfLastRow >= filterData.length}
+              disabled={idxofLast >= filterData.length}
             >
               Next
             </button>
