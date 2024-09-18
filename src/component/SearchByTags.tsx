@@ -20,6 +20,7 @@ export default function SearchByTags() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const rowsPerPage = 30;
 
+  console.log(tag);
   const url = `https://codeforces.com/api/problemset.problems`;
 
   useEffect(() => {
