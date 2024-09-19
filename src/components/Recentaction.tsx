@@ -65,11 +65,14 @@ const NewsSection = () => {
             {action.comment ? (
               <div className="hover:bg-gray-50 rounded-lg p-4 transition-colors duration-300">
                 <strong className="text-lg text-blue-600 hover:text-blue-800 transition-colors duration-300">
-                   <span>
-                   <a
-                   target="_blank" 
-                   href={`https://codeforces.com/comments/with/${action.comment.commentatorHandle}`}>{action.comment.commentatorHandle} commented:</a>
-                    </span> 
+                  <span>
+                    <a
+                      target="_blank"
+                      href={`https://codeforces.com/comments/with/${action.comment.commentatorHandle}`}
+                    >
+                      {action.comment.commentatorHandle} commented:
+                    </a>
+                  </span>
                 </strong>
                 <div
                   className="mt-2 text-gray-800"
@@ -81,7 +84,14 @@ const NewsSection = () => {
             ) : action.blogEntry ? (
               <div className="hover:bg-gray-50 rounded-lg p-4 transition-colors duration-300">
                 <strong className="text-lg text-green-600 hover:text-green-800 transition-colors duration-300">
-                  Blog post by {action.blogEntry.authorHandle}:
+                  <span>
+                    <a
+                      target="_blank"
+                      href={`https://codeforces.com/comments/with/${action.blogEntry.authorHandle}`}
+                    >
+                      Blog post by {action.blogEntry.authorHandle}
+                    </a>
+                  </span>
                 </strong>
                 <a
                   href={`https://codeforces.com/blog/entry/${action.blogEntry.id}`}
@@ -105,7 +115,3 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
-
-
-
-
