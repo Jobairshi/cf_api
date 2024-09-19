@@ -65,7 +65,11 @@ const NewsSection = () => {
             {action.comment ? (
               <div className="hover:bg-gray-50 rounded-lg p-4 transition-colors duration-300">
                 <strong className="text-lg text-blue-600 hover:text-blue-800 transition-colors duration-300">
-                  {action.comment.commentatorHandle} commented:
+                   <span>
+                   <a
+                   target="_blank" 
+                   href={`https://codeforces.com/comments/with/${action.comment.commentatorHandle}`}>{action.comment.commentatorHandle} commented:</a>
+                    </span> 
                 </strong>
                 <div
                   className="mt-2 text-gray-800"
@@ -101,3 +105,7 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
+
+
+
+

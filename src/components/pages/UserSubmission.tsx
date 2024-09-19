@@ -68,13 +68,7 @@ export default function UserSubmission() {
     setName(username);
     console.log(username);
   }
-  // function conditional() {
-  //   if (showSub) {
-  //     return <RecentSub username={name} />;
-  //   } else {
-  //     <p />;
-  //   }
-  // }
+
 
   return (
     <>
@@ -155,7 +149,7 @@ export default function UserSubmission() {
             </div>
           )}
         </div>
-        
+         
         <div ><RecentSub username={name} /></div>
       </div>
     </>
