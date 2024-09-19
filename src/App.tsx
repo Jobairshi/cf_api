@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Problem_filter from "./component/Problem_filter";
-import UserSubmission from "./component/UserSubmission";
-import Navbar from "./component/Navbar";
-import SearchByTags from "./component/SearchByTags";
+import Problem_filter from "./components/Problem_filter";
+import UserSubmission from "./components/UserSubmission";
+import Navbar from "./components/Navbar";
+import SearchByTags from "./components/SearchByTags";
 
 
 
