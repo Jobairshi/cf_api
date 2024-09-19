@@ -70,7 +70,7 @@ export default function RecentSub({ username }: propsStruct) {
     };
 
     awaitFetch();
-  }, [username]);
+  }, [username,url]);
 
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
