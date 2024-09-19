@@ -4,6 +4,7 @@ import UserSubmission from "./components/pages/UserSubmission";
 import Navbar from "./components/Navbar";
 import SearchByTags from "./components/pages/SearchByTags";
 import SignIn from "./components/pages/Signin";
+import Contest from "./components/pages/Contest";
 
 
 
@@ -19,6 +20,7 @@ export default function App() {
       <Route  path="/problem-rating" element = {<Problem_filter/>}/>
       <Route  path="/user-sub" element = {<UserSubmission/>}/>
       <Route path="/search-by-tag" element = {<SearchByTags/>}/>
+      <Route path="/contests" element = {<Contest/>}/>
       
     </Routes>
     </>
