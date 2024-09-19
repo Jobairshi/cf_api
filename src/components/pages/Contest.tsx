@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface contestStruct {
   id: number;
@@ -30,16 +30,17 @@ export default function Contest() {
     };
     fetchData();
   }, [url]);
-  function formatDuration(seconds: number){
+
+  function formatDuration(seconds: number) {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     return `${hours}h ${minutes}m`;
-  };
+  }
 
-  function formatStartTime(timestamp: number){
+  function formatStartTime(timestamp: number) {
     const date = new Date(timestamp * 1000);
     return date.toLocaleString();
-  };
+  }
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -60,9 +61,9 @@ export default function Contest() {
         <tbody>
           {data &&
             data.map((elem, key: number) => {
-              if (elem.phase !== "FINISHED")
+              if (elem.phase === "BEFORE") {
                 return (
-                  <tr key={key} className="hover:bg-gray-50">
+                  <tr key={key} className="hover:bg-blue-200 transition-all duration-300 ease-in-out">
                     <td className="p-2 border-b">{elem.id}</td>
                     <td className="p-2 border-b">{elem.name}</td>
                     <td className="p-2 border-b">
@@ -71,17 +72,39 @@ export default function Contest() {
                     <td className="p-2 border-b">
                       {formatStartTime(elem.startTimeSeconds)}
                     </td>
-                    <td className="p-2 border-b">
+                    <td className="p-4 border-b">
                       <a
-                        className="text-blue-500 border-2 rounded-lg py-2 p-2 bg-blue-100 hover:underline"
+                        className="text-blue-500 border-2 rounded-lg p-2 bg-blue-100 hover:bg-blue-200 transition-all transform hover:scale-105 hover:shadow-lg hover:underline"
                         href={`https://codeforces.com/contestRegistration/${elem.id}`}
-                        target="_blank" // this for open in new tab
+                        target="_blank"
                       >
                         Register
                       </a>
                     </td>
                   </tr>
                 );
+              } else if (elem.phase === "CODING") {
+                return (
+                  <tr key={key} className="hover:bg-blue-200 transition-all duration-300 ease-in-out">
+                    <td className="p-2 border-b">{elem.id}</td>
+                    <td className="p-2 border-b">{elem.name}</td>
+                    <td className="p-2 border-b">
+                      {formatDuration(elem.durationSeconds)}
+                    </td>
+                    <td className="p-2 border-b">
+                      {formatStartTime(elem.startTimeSeconds)}
+                    </td>
+                    <td className="p-4 border-b">
+                      <a
+                        className="text-blue-500 border-2 rounded-lg p-2 bg-blue-100 hover:bg-blue-200 transition-all transform hover:scale-105 hover:shadow-lg hover:underline"
+                        href="#"
+                      >
+                        Coming Soon
+                      </a>
+                    </td>
+                  </tr>
+                );
+              }
             })}
         </tbody>
       </table>
