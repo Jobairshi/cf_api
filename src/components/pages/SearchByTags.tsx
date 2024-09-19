@@ -1,6 +1,6 @@
 import axios from "axios";
 import { MouseEvent, useEffect, useState } from "react";
-import SubProblem from "./SubProblem";
+import SubProblem from "../SubProblem";
 
 interface cfProblemSetStruct {
   contestId: number;

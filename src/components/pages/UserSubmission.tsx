@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import RecentSub from "./RecentSub";
+import RecentSub from "../RecentSub";
 
 
 interface userStruct {
@@ -24,7 +24,8 @@ interface userStruct {
 }
 
 export default function UserSubmission() {
-  const [name, setName] = useState("Jobair_uddin");
+  const localName = localStorage.getItem('name')
+  const [name, setName] = useState(localName||'');
   const [data, setData] = useState<userStruct[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -109,7 +110,7 @@ export default function UserSubmission() {
           </button>
 
           {data.length > 0 && (
-            <div className="w-full md:w-1/2 lg:w-1/3 bg-white shadow-lg shadow-cyan-400 rounded-lg p-6 text-center mt-8 hover:bg-green-300">
+            <div className="w-full md:w-1/2 lg:w-1/3 bg-white shadow-lg shadow-cyan-400 rounded-lg p-6 text-center mt-8 hover:bg-cyan-200">
               <img
                 src={data[0].titlePhoto}
                 alt={`${data[0].firstName} ${data[0].lastName}`}

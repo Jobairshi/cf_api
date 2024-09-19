@@ -5,8 +5,8 @@ import {
   useEffect,
   useState,
 } from "react";
-import useFetch from "../useFetch";
-import SubProblem from "./SubProblem";
+import useFetch from "../../useFetch";
+import SubProblem from "../SubProblem";
 interface cfProblemSetStruct {
   contestId: number;
   index: string;
