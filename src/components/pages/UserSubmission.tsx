@@ -106,7 +106,7 @@ export default function UserSubmission() {
             className="border-2 border-black p-2 rounded-lg bg-green-300 hover:bg-green-400 transition duration-300"
           >
             {" "}
-            show recent submission{" "}
+            user profile analysis{" "}
           </button>
 
           {data.length > 0 && (
