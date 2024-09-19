@@ -28,7 +28,7 @@ const NewsSection = () => {
         );
         setNews(response.data.result);
       } catch (err) {
-        const msg  = (err as Error ).message;
+        const msg = (err as Error).message;
         setError(msg);
       } finally {
         setLoading(false);
@@ -58,10 +58,13 @@ const NewsSection = () => {
       </h2>
       <ul>
         {news.map((action, index) => (
-          <li key={index} className="mb-6 p-4 border-b border-gray-200">
+          <li
+            key={index}
+            className="mb-6 p-4 border-b border-gray-200 transition-transform transform hover:scale-[1.02] hover:shadow-lg"
+          >
             {action.comment ? (
-              <div>
-                <strong className="text-lg text-blue-600">
+              <div className="hover:bg-gray-50 rounded-lg p-4 transition-colors duration-300">
+                <strong className="text-lg text-blue-600 hover:text-blue-800 transition-colors duration-300">
                   {action.comment.commentatorHandle} commented:
                 </strong>
                 <div
@@ -72,16 +75,18 @@ const NewsSection = () => {
                 />
               </div>
             ) : action.blogEntry ? (
-                <div>
-                <strong className="text-lg text-green-600">
+              <div className="hover:bg-gray-50 rounded-lg p-4 transition-colors duration-300">
+                <strong className="text-lg text-green-600 hover:text-green-800 transition-colors duration-300">
                   Blog post by {action.blogEntry.authorHandle}:
                 </strong>
                 <a
                   href={`https://codeforces.com/blog/entry/${action.blogEntry.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block mt-2 text-blue-500 hover:underline"
-                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(action.blogEntry.title) }}
+                  className="block mt-2 text-blue-500 hover:underline hover:text-blue-700 transition-colors duration-300"
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(action.blogEntry.title),
+                  }}
                 />
               </div>
             ) : null}
