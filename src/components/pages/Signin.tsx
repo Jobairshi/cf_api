@@ -41,12 +41,12 @@ export default function SignIn() {
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        {/* News Section - 8 columns */}
+        
         <div className="md:col-span-8 bg-white shadow-lg rounded-lg p-6">
           <NewsSection />
         </div>
 
-        {/* Login Section - 4 columns */}
+        
         <div className="md:col-span-4 bg-white shadow-lg rounded-lg p-6">
           <h3 className="text-2xl font-semibold text-center mb-6">Sign in</h3>
           <form onSubmit={handleSubmit}>
@@ -62,7 +62,7 @@ export default function SignIn() {
                 id="name"
                 name="name"
                 className="mt-1 px-3 py-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Enter username"
+                placeholder="Enter codeforces username"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -80,7 +80,7 @@ export default function SignIn() {
                 id="password"
                 name="password"
                 className="mt-1 px-3 py-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="••••••••"
+                placeholder="A random passwrod••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
